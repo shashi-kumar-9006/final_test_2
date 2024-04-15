@@ -20,9 +20,9 @@ function testAND_TrueTrue(testCase)
     % Run the simulation
     sim('and_gate_model.slx');
     % Get the output from the Display block
-    output = get_param('and_gate_model/Display', 'YData');
+    output = get_param('and_gate_model/Display', 'Values');
     % Assert the output
-    testCase.verifyEqual(output(end), 1);
+    testCase.verifyEqual(output.Values(end), 1);
 end
  
 function testAND_TrueFalse(testCase)
@@ -32,9 +32,9 @@ function testAND_TrueFalse(testCase)
     % Run the simulation
     sim('and_gate_model.slx');
     % Get the output from the Display block
-    output = get_param('and_gate_model/Display', 'YData');
+    output = get_param('and_gate_model/Display', 'Values');
     % Assert the output
-    testCase.verifyEqual(output(end), 0);
+    testCase.verifyEqual(output.Values(end), 0);
 end
  
 % Add more test cases for other input combinations
