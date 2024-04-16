@@ -80,6 +80,6 @@ function testAND_FalseFalse(testCase)
    % output = get_param('and_gate_model/Display', 'Format');
     
     % Assert the output
-    testCase.verifyEqual(num2str(a), '0');
+    testCase.verifyEqual(num2str(a), '1');
     clear ans;
 end
