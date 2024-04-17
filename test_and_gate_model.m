@@ -22,15 +22,15 @@ function testAND_TrueTrue(testCase)
     sim('and_gate_model.slx');
     % Get the output from the Display block
     save matlab.mat;
-    load matlab.mat;
+    load matlab.mat ans;
     a=ans.simout.Data;
+    
    % output = get_param('and_gate_model/Display', 'Format');
     
     % Assert the output
-    testCase.verifyEqual(num2str(a), '1');
-    clear ans;
+    testCase.verifyEqual(double(a), 0)
+    clear ans
 end
-
 function testAND_TrueFalse(testCase)
     % Test case: a = 1, b = 1
     set_param('and_gate_model/Constant', 'Value', '1');
@@ -38,17 +38,16 @@ function testAND_TrueFalse(testCase)
     % Run the simulation
     sim('and_gate_model.slx');
     % Get the output from the Display block
-    
     save matlab.mat;
-    load matlab.mat;
+    load matlab.mat ans;
     a=ans.simout.Data;
+    
    % output = get_param('and_gate_model/Display', 'Format');
     
     % Assert the output
-    testCase.verifyEqual(num2str(a), '0');
-    clear ans;
+    testCase.verifyEqual(double(a), 0)
+    clear ans
 end
-
 function testAND_FalseTrue(testCase)
     % Test case: a = 1, b = 1
     set_param('and_gate_model/Constant', 'Value', '0');
@@ -56,15 +55,15 @@ function testAND_FalseTrue(testCase)
     % Run the simulation
     sim('and_gate_model.slx');
     % Get the output from the Display block
-    
     save matlab.mat;
-    load matlab.mat;
+    load matlab.mat ans;
     a=ans.simout.Data;
+    
    % output = get_param('and_gate_model/Display', 'Format');
     
     % Assert the output
-    testCase.verifyEqual(num2str(a),'0' );
-    clear ans;
+    testCase.verifyEqual(double(a), 0)
+    clear ans
 end
 function testAND_FalseFalse(testCase)
     % Test case: a = 1, b = 1
@@ -73,13 +72,13 @@ function testAND_FalseFalse(testCase)
     % Run the simulation
     sim('and_gate_model.slx');
     % Get the output from the Display block
-    
     save matlab.mat;
-    load matlab.mat;
+    load matlab.mat ans;
     a=ans.simout.Data;
+    
    % output = get_param('and_gate_model/Display', 'Format');
     
     % Assert the output
-    testCase.verifyEqual(num2str(a), '0');
-    clear ans;
+    testCase.verifyEqual(double(a), 0)
+    clear ans
 end
