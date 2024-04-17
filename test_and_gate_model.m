@@ -28,7 +28,7 @@ function testAND_TrueTrue(testCase)
    % output = get_param('and_gate_model/Display', 'Format');
     
     % Assert the output
-    testCase.verifyEqual(double(a), 0)
+    testCase.verifyEqual(double(a), 1)
     clear ans
 end
 function testAND_TrueFalse(testCase)
